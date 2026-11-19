@@ -1,0 +1,5 @@
+@media(max-width:780px){.site-header{flex-wrap:wrap}.site-header nav{order:3;width:100%;overflow:auto}.availability{display:none}.hero-layout,.agents,.snowy-section,.about-grid,.project{grid-template-columns:1fr;gap:28px}.project:nth-child(even) .project-media{order:0}.metrics{grid-template-columns:repeat(2,1fr);margin-top:50px}.metrics div:nth-child(2){border-right:0}.metrics div:nth-child(-n+2){border-bottom:1px solid var(--line)}.section-intro{display:block}.section-intro h2{margin-top:8px}.section-shell{width:calc(100% - 34px);padding:68px 0}h1{font-size:clamp(3.2rem,16vw,5rem)}.portrait{max-width:420px}.snowy-card{min-height:300px}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}#swarm{display:none}}
+
+@media(pointer:coarse){#swarm{display:none}}

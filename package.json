@@ -2,11 +2,14 @@
   "name": "user4xn.porto",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "legacy:dev": "next dev",
+    "legacy:build": "next build",
+    "legacy:start": "next start"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.4",
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "vite": "^6.0.0"
   }
 }
