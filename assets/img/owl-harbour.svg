@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#243140"/><stop offset="1" stop-color="#0f1215"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g stroke="#2c3b47" stroke-width="1">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600"/>
+    <path d="M320 0 V900 M640 0 V900 M960 0 V900 M1280 0 V900"/>
+  </g>
+  <rect x="0" y="0" width="1600" height="60" fill="#0c0f12"/>
+  <circle cx="34" cy="30" r="7" fill="#b84d2f"/>
+  <circle cx="60" cy="30" r="7" fill="#4a5560"/>
+  <circle cx="86" cy="30" r="7" fill="#4a5560"/>
+  <text x="140" y="38" font-size="22" fill="#9fb0bc">owlharbour — live map</text>
+  <rect x="1450" y="16" width="120" height="28" rx="14" fill="#16302a"/>
+  <text x="1474" y="35" font-size="15" fill="#6fd39a">● 12 vessels</text>
+  <text x="70" y="220" font-size="40" fill="#e6edf2">Vessel tracking, geofenced.</text>
+  <text x="70" y="265" font-size="18" fill="#8a97a0">Check-in / check-out from live GPS inside harbour polygons.</text>
+  <g transform="translate(1250,470)">
+    <circle r="200" fill="none" stroke="#1d2c38" stroke-width="1"/>
+    <circle r="150" fill="none" stroke="#263845" stroke-width="1"/>
+    <circle r="100" fill="none" stroke="#31485a" stroke-width="1"/>
+    <circle r="50" fill="none" stroke="#3f5d73" stroke-width="1"/>
+    <path d="M0 -200 L0 200 M-200 0 L200 0" stroke="#1d2c38" stroke-width="1"/>
+    <circle r="9" fill="#b84d2f"/>
+    <circle cx="86" cy="-54" r="7" fill="#e6b64f"/>
+    <circle cx="-120" cy="30" r="7" fill="#5aa0d8"/>
+    <circle cx="40" cy="130" r="7" fill="#6fd39a"/>
+    <circle cx="-60" cy="-120" r="7" fill="#d86a5a"/>
+  </g>
+  <rect x="70" y="700" width="560" height="150" rx="8" fill="#101820"/>
+  <text x="96" y="745" font-size="16" fill="#9fb0bc">event.stream</text>
+  <text x="96" y="780" font-size="14" fill="#5f7180">M/V Nusantara entered zone A · 14:02:11</text>
+  <text x="96" y="810" font-size="14" fill="#5f7180">M/V Samudra left berth 04 · 14:02:47</text>
+  <rect x="70" y="340" width="560" height="180" rx="8" fill="#101820"/>
+  <text x="96" y="382" font-size="16" fill="#9fb0bc">geofence.polygons</text>
+  <text x="96" y="420" font-size="14" fill="#5f7180">berth_a · 4 check-ins · active</text>
+  <text x="96" y="450" font-size="14" fill="#5f7180">berth_b · 9 check-ins · active</text>
+  <text x="96" y="480" font-size="14" fill="#5f7180">channel_in · 1 check-in · idle</text>
+</svg>

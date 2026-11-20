@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#32261f"/><stop offset="1" stop-color="#101214"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="60" fill="#0c0d0f"/>
+  <circle cx="34" cy="30" r="7" fill="#b84d2f"/>
+  <circle cx="60" cy="30" r="7" fill="#4a5560"/>
+  <circle cx="86" cy="30" r="7" fill="#4a5560"/>
+  <text x="140" y="38" font-size="22" fill="#d9c7b8">cronsoul — jobs</text>
+  <rect x="1450" y="16" width="120" height="28" rx="14" fill="#3a2a20"/>
+  <text x="1484" y="35" font-size="15" fill="#e0a06b">● 8 running</text>
+  <text x="70" y="220" font-size="40" fill="#f2e9e2">Scheduled work that reports back.</text>
+  <text x="70" y="265" font-size="18" fill="#9b8a7d">Cron jobs, alerts, and a monitor you can actually read.</text>
+  <g transform="translate(1180,470)" stroke="#b84d2f" stroke-width="2" fill="none">
+    <circle r="170"/>
+    <path d="M0 -170 L0 170 M-170 0 L170 0"/>
+    <path d="M0 0 L0 -130" stroke="#e0a06b"/>
+    <path d="M0 0 L110 62" stroke="#e0a06b"/>
+    <circle r="10" fill="#b84d2f" stroke="none"/>
+  </g>
+  <rect x="70" y="340" width="600" height="190" rx="8" fill="#16120f"/>
+  <text x="96" y="384" font-size="16" fill="#cbb7a4">cronsoul run backup-nightly</text>
+  <text x="96" y="420" font-size="14" fill="#8a7b70">▸ compressing office data</text>
+  <text x="96" y="450" font-size="14" fill="#8a7b70">▸ encrypting with age</text>
+  <text x="96" y="480" font-size="14" fill="#8a7b70">▸ pushing to github · 1.2 MB/s</text>
+  <text x="96" y="514" font-size="14" fill="#6fd39a">✓ done in 12.4s</text>
+  <rect x="70" y="560" width="600" height="150" rx="8" fill="#16120f"/>
+  <text x="96" y="602" font-size="16" fill="#cbb7a4">* * * * *</text>
+  <text x="96" y="636" font-size="14" fill="#8a7b70">every minute · digest · monitor-health</text>
+  <text x="96" y="670" font-size="14" fill="#e0a06b">next run in 00:00:41</text>
+</svg>

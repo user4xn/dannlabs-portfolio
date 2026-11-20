@@ -8,11 +8,11 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/src/styles/index.css?v=3">
+<link rel="stylesheet" href="/src/styles/index.css?v=6">
 </head>
 <body>
 <div class="grid-bg" aria-hidden="true"></div><div id="cursor-swarm" aria-hidden="true"></div>
-<header class="site-header"><a class="brand" href="#top"><i></i> WILDAN / SYSTEMS</a><nav><a href="#work">Work</a><a href="#agents">Agents</a><a href="#about">About</a><a href="#contact">Contact</a></nav><span class="availability"><b></b> available for good work</span></header>
+<header class="site-header"><a class="brand" href="#top"><i></i> WILDAN / SYSTEMS</a><nav><a href="#work">Work</a><a href="#agents">Agents</a><a href="#experience">Experience</a><a href="#toolkit">Toolkit</a><a href="#about">About</a><a href="#contact">Contact</a></nav><span class="availability"><b></b> available for good work</span></header>
 <main id="top">
 <section class="hero shell">
   <div class="hero-grid">
@@ -22,13 +22,13 @@
       <p class="lead">I work on production systems where payments, logistics, integrations, and reliability meet. Lately, I have also been building an AI agent office to make the work itself better.</p>
       <div class="actions"><a class="button primary" href="#work">View selected work <span>↘</span></a><a class="button ghost" href="#agents">How I build agents <span>✦</span></a></div>
     </div>
-    <div id="snowy" class="snowy-card hero-snowy" aria-label="Chat with Snowy, public portfolio assistant">
-      <div class="snowy-card-head"><div class="snowy-identity"><div class="snowy-cat" id="snowy-cat" role="img" aria-label="Snowy, a white cat assistant"><span class="eye left"></span><span class="eye right"></span><span class="nose"></span><span class="tail"></span></div><div><b>Snowy</b><span class="snowy-role">Wildan's portfolio assistant</span></div></div><span class="online-status"><i></i> here to help</span></div>
-      <div class="chat"><div class="bubble snowy-bubble">Hi, I’m Snowy. Curious about one of Wildan’s projects?</div><div id="snowy-response" class="bubble response">Ask me about payments, logistics, or how the agent office works.</div></div>
-      <ol id="snowy-activity" class="activity" aria-live="polite" hidden></ol>
-      <div class="snowy-links"><button type="button" data-snowy-prompt="What did Wildan build with RabbitMQ?">RabbitMQ</button><button type="button" data-snowy-prompt="How does the agent office work?">Agent office</button><button type="button" data-snowy-prompt="Show me a payment system.">Payments</button></div>
-      <form id="snowy-form"><input id="snowy-input" placeholder="Ask Snowy..." autocomplete="off" maxlength="500"><button aria-label="Send message">↗</button></form>
-      <p class="snowy-note">Public knowledge only <span>·</span> no access to private systems</p>
+    <div class="snowy-card hero-snowy" aria-label="Snowy public-agent engineering showcase">
+      <div class="snowy-card-head"><div class="snowy-identity"><div class="snowy-cat" role="img" aria-label="Snowy, a white cat assistant"><span class="eye left"></span><span class="eye right"></span><span class="nose"></span><span class="tail"></span></div><div><b>Snowy</b><span class="snowy-role">public AI assistant · in development</span></div></div><span class="online-status"><i></i> design concept</span></div>
+      <div class="showcase-copy"><p class="showcase-label">Public assistant concept</p><h2>Not a chat widget.<br><em>A bounded agent.</em></h2><p>Public knowledge in. A useful answer out. Private systems stay private.</p></div>
+      <div class="showcase-flow" aria-label="Public agent flow"><span>Question</span><i>→</i><span>Public context</span><i>→</i><span>Answer + source</span></div>
+      <div class="showcase-sample"><span class="sample-label">HOW IT WORKS</span><p><i></i> Looking through public project notes</p><p><i></i> Selecting relevant sources</p><p><i></i> Preparing a concise answer</p></div>
+      <a class="showcase-link" href="#agents">See how I design AI agents <span>↗</span></a>
+      <p class="snowy-note">Public agent runtime will be built separately.</p>
     </div>
   </div>
   <div class="metrics"><div><strong>4+</strong><span>years in production backend</span></div><div><strong>6</strong><span>carrier & courier integrations</span></div><div><strong>3</strong><span>platforms shipped end to end</span></div><div><strong>∞</strong><span>systems still being improved</span></div></div>
@@ -39,7 +39,7 @@
 </section>
 <section id="agents" class="dark-band"><div class="shell agents" data-reveal>
   <div class="section-intro"><span class="section-kicker">AGENT ENGINEERING</span><div><h2>I also build the team around the code.</h2><p>Not one chatbot with a long prompt. A small office of specialised agents with roles, permissions, and evidence.</p></div></div>
-  <div class="office-panel"><div class="office-head"><span><i></i><i></i><i></i></span><b>snowy.office / status</b><em>public demo</em></div><pre><span class="dim">$</span> hermes office status
+  <div class="office-panel"><div class="office-head"><span><i></i><i></i><i></i></span><b>agent office / architecture</b><em>case study</em></div><pre><span class="dim">$</span> hermes office status
 
   <span class="cat">snowy</span>    chief of staff   <span class="online">● online</span>   routes work
   <span class="cat">poki</span>     product manager  <span class="online">● online</span>   scopes tasks
@@ -51,9 +51,30 @@
 
 <span class="green">$</span> <span class="cursor">▍</span></pre></div>
 </div></section>
+<section class="pullquote shell" aria-label="Working principle" data-reveal>
+  <blockquote><p>I build for the 3 a.m. incident, not the demo.</p></blockquote>
+  <p class="quote-note">How I judge backend work: it has to hold when nobody is watching.</p>
+</section>
 <section id="about" class="shell about" data-reveal>
   <div class="section-intro"><span class="section-kicker">A LITTLE CONTEXT</span><h2>The part of the product nobody sees.</h2></div>
   <div class="about-grid"><p>I started as a web developer and moved toward the systems underneath: pricing rules, ledgers, queues, integrations, and migrations. At Komerce I work on the logistics platform—systems that move shipments, balances, and transactions through a world of external providers.</p><p>I like architecture when it makes change cheaper. I use AI-assisted workflows too, but keep ownership of the code and the decisions that ship.</p></div>
+</section>
+<section id="experience" class="shell experience" data-reveal>
+  <div class="section-intro"><span class="section-kicker">CAREER</span><h2>Experience.</h2></div>
+  <ol class="timeline">
+    <li><p class="t-year">2022 — now</p><div class="t-body"><h3>Backend Developer</h3><p class="t-org">Komerce · Purbalingga</p><p>Shipment pricing, balance and transaction processing for the logistics platform; integrations with six carriers; production incident handling and API documentation.</p></div></li>
+    <li><p class="t-year">2026</p><div class="t-body"><h3>Backend Developer</h3><p class="t-org">Kedata Indonesia Digital · Remote</p><p>Maintained the Digdaya NU Persuratan backend and built internal automation: letterhead and stamp generators, Peruri export files.</p></div></li>
+    <li><p class="t-year">2020 — 2022</p><div class="t-body"><h3>Full-stack Web Developer</h3><p class="t-org">PT Mardizu Sejahtera · Bekasi</p><p>Built internal tools and dashboards, managed hosting and domains, and digitised manual workflows for daily operations.</p></div></li>
+  </ol>
+</section>
+<section id="toolkit" class="shell skills" data-reveal>
+  <div class="section-intro"><span class="section-kicker">TOOLS I USE</span><h2>Toolkit.</h2></div>
+  <div class="skill-grid">
+    <div class="skill-col"><h3>Languages</h3><ul><li>Go</li><li>PHP</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li></ul></div>
+    <div class="skill-col"><h3>Frameworks</h3><ul><li>Gin · Echo · Fiber</li><li>Laravel · CodeIgniter</li><li>Vue · React</li><li>Express</li></ul></div>
+    <div class="skill-col"><h3>Data</h3><ul><li>PostgreSQL · MySQL</li><li>MongoDB</li><li>Redis</li><li>Elasticsearch</li></ul></div>
+    <div class="skill-col"><h3>Infra &amp; messaging</h3><ul><li>Docker · Nginx</li><li>RabbitMQ · Asynq</li><li>GitHub Actions</li><li>Linux · Git</li></ul></div>
+  </div>
 </section>
 <section id="contact" class="contact-band"><div class="shell"><span class="section-kicker">LET'S TALK</span><h2>Have a system to untangle?</h2><a class="contact-link" href="mailto:wildan.desperado@gmail.com">wildan.desperado@gmail.com ↗</a><div class="contact-meta"><a href="https://github.com/user4xn">GitHub</a><a href="https://www.linkedin.com/in/wildan-candra/">LinkedIn</a><a href="/assets/cv-wildan-candra.pdf">CV</a></div></div></section>
 </main>
