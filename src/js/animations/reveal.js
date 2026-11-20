@@ -1,1 +1,3 @@
-export function initReveal(){const items=document.querySelectorAll('[data-reveal]');if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('motion-ready');const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}),{threshold:.12});items.forEach(i=>observer.observe(i))}
+// Scroll-reveal is intentionally disabled: content must be visible by default.
+// Kept as a no-op entrypoint so main.js wiring stays stable.
+export function initReveal() {}
