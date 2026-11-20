@@ -1,0 +1,19 @@
+[Unit]
+Description=Snowy public portfolio agent (isolated, stateless)
+After=network.target
+
+[Service]
+User=user4xn
+Group=user4xn
+WorkingDirectory=/home/user4xn/work/dannlabs-portfolio/public-agent
+Environment=SNOWY_PUBLIC_DB=/home/user4xn/snowy-public-data/snowy-public.sqlite3
+Environment=SNOWY_PUBLIC_PORT=8787
+ExecStart=/usr/bin/python3 server.py
+Restart=on-failure
+RestartSec=3
+MemoryMax=150M
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

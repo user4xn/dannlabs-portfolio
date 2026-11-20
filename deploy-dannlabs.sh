@@ -13,6 +13,11 @@ cp -a "$ROOT/index.html" "$ROOT/assets" "$ROOT/src" "$ROOT/robots.txt" "$ROOT/si
 find "$SITE" -type d -exec chmod 755 {} +
 find "$SITE" -type f -exec chmod 644 {} +
 
+install -d -m 0755 /home/user4xn/snowy-public-data
+install -m 0644 "$ROOT/public-agent/snowy-public.service" /etc/systemd/system/snowy-public.service
+systemctl daemon-reload
+systemctl enable --now snowy-public.service
+
 install -d /etc/nginx/snippets
 cat > /etc/nginx/snippets/snowy-api.conf <<'NGINX'
 location /api/snowy {
