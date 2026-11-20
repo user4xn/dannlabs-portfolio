@@ -6,6 +6,13 @@ set -euo pipefail
 ROOT="/home/user4xn/work/dannlabs-portfolio"
 SITE="/var/www/dannlabs.my.id"
 CONF="/etc/nginx/sites-available/dannlabs.my.id"
+PROVIDER_ENV="/home/user4xn/snowy-public-data/provider.env"
+
+# Fail before modifying live files unless a dedicated, non-Hermes provider key exists.
+if [[ ! -r "$PROVIDER_ENV" ]] || ! grep -q '^SNOWY_PUBLIC_PROVIDER_KEY=.' "$PROVIDER_ENV"; then
+  echo "Missing dedicated public-agent provider key in $PROVIDER_ENV; live deployment was not changed." >&2
+  exit 2
+fi
 
 install -d -m 0755 "$SITE"
 find "$SITE" -mindepth 1 -maxdepth 1 -exec rm -rf {} +

@@ -172,4 +172,6 @@ class Handler(BaseHTTPRequestHandler):
         self.emit_sse("answer", {"text":answer_text}); self.emit_sse("completed", result); self.close_connection = True
 
 if __name__ == "__main__":
+    if not PROVIDER_URL or not MODEL or not PROVIDER_KEY:
+        raise SystemExit("Snowy public requires a dedicated provider URL, model, and provider key; it will not run in keyword fallback mode.")
     db().close(); print(f"Snowy public listening on http://{HOST}:{PORT}", flush=True); ThreadingHTTPServer((HOST,PORT), Handler).serve_forever()

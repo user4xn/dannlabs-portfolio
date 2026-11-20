@@ -15,10 +15,22 @@
 <header class="site-header"><a class="brand" href="#top"><i></i> WILDAN / SYSTEMS</a><nav><a href="#work">Work</a><a href="#agents">Agents</a><a href="#about">About</a><a href="#contact">Contact</a></nav><span class="availability"><b></b> available for good work</span></header>
 <main id="top">
 <section class="hero shell">
-  <div class="eyebrow">BACKEND ENGINEER · AI AGENT BUILDER · PURBALINGGA, INDONESIA</div>
-  <h1>I build the backend that moves <em>money, parcels, and ships.</em></h1>
-  <p class="lead">I work on production systems where payments, logistics, integrations, and reliability meet. Lately, I have also been building an AI agent office to make the work itself better.</p>
-  <div class="actions"><a class="button primary" href="#work">View selected work <span>↘</span></a><a class="button ghost" href="#snowy">Meet Snowy <span>✦</span></a></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">BACKEND ENGINEER · AI AGENT BUILDER · PURBALINGGA, INDONESIA</div>
+      <h1>I build the backend that moves <em>money, parcels, and ships.</em></h1>
+      <p class="lead">I work on production systems where payments, logistics, integrations, and reliability meet. Lately, I have also been building an AI agent office to make the work itself better.</p>
+      <div class="actions"><a class="button primary" href="#work">View selected work <span>↘</span></a><a class="button ghost" href="#agents">How I build agents <span>✦</span></a></div>
+    </div>
+    <div id="snowy" class="snowy-card hero-snowy" aria-label="Chat with Snowy, public portfolio assistant">
+      <div class="snowy-card-head"><div class="snowy-identity"><div class="snowy-cat" id="snowy-cat" role="img" aria-label="Snowy, a white cat assistant"><span class="eye left"></span><span class="eye right"></span><span class="nose"></span><span class="tail"></span></div><div><b>Snowy</b><span class="snowy-role">Wildan's portfolio assistant</span></div></div><span class="online-status"><i></i> here to help</span></div>
+      <div class="chat"><div class="bubble snowy-bubble">Hi, I’m Snowy. Curious about one of Wildan’s projects?</div><div id="snowy-response" class="bubble response">Ask me about payments, logistics, or how the agent office works.</div></div>
+      <ol id="snowy-activity" class="activity" aria-live="polite" hidden></ol>
+      <div class="snowy-links"><button type="button" data-snowy-prompt="What did Wildan build with RabbitMQ?">RabbitMQ</button><button type="button" data-snowy-prompt="How does the agent office work?">Agent office</button><button type="button" data-snowy-prompt="Show me a payment system.">Payments</button></div>
+      <form id="snowy-form"><input id="snowy-input" placeholder="Ask Snowy..." autocomplete="off" maxlength="500"><button aria-label="Send message">↗</button></form>
+      <p class="snowy-note">Public knowledge only <span>·</span> no access to private systems</p>
+    </div>
+  </div>
   <div class="metrics"><div><strong>4+</strong><span>years in production backend</span></div><div><strong>6</strong><span>carrier & courier integrations</span></div><div><strong>3</strong><span>platforms shipped end to end</span></div><div><strong>∞</strong><span>systems still being improved</span></div></div>
 </section>
 <section id="work" class="shell work" data-reveal>
@@ -39,17 +51,6 @@
 
 <span class="green">$</span> <span class="cursor">▍</span></pre></div>
 </div></section>
-<section id="snowy" class="shell snowy-section" data-reveal>
-  <div class="snowy-copy"><span class="section-kicker">A PUBLIC DEMO OF THE INTEGRATION</span><h2>Meet Snowy.</h2><p>I didn't add a chatbot to this portfolio. I gave an assistant a role, a bounded context, and a job: help people understand the work.</p><p class="muted">Snowy is a public, stateless demo. No private repositories. No live server access. Just the public work, explained clearly.</p>
-  <div class="snowy-links"><button type="button" data-snowy-prompt="What did Wildan build with RabbitMQ?">RabbitMQ projects</button><button type="button" data-snowy-prompt="How does the agent office work?">Agent office</button><button type="button" data-snowy-prompt="Show me a payment system.">Payment systems</button></div></div>
-  <div class="snowy-card">
-    <div class="snowy-cat" id="snowy-cat" role="img" aria-label="Snowy, a white cat assistant"><span class="eye left"></span><span class="eye right"></span><span class="nose"></span><span class="tail"></span></div>
-    <div class="snowy-card-head"><b>Snowy</b><span>public portfolio assistant · online</span></div>
-    <ol id="snowy-activity" class="activity" aria-live="polite" hidden></ol>
-    <div class="chat"><div class="bubble snowy-bubble">Hi. I can walk you through Wildan's work.</div><div id="snowy-response" class="bubble response">Ask me about a project, an architecture decision, or the way the agent office works.</div></div>
-    <form id="snowy-form"><input id="snowy-input" placeholder="Ask Snowy..." autocomplete="off" maxlength="500"><button aria-label="Send">↗</button></form>
-  </div>
-</section>
 <section id="about" class="shell about" data-reveal>
   <div class="section-intro"><span class="section-kicker">A LITTLE CONTEXT</span><h2>The part of the product nobody sees.</h2></div>
   <div class="about-grid"><p>I started as a web developer and moved toward the systems underneath: pricing rules, ledgers, queues, integrations, and migrations. At Komerce I work on the logistics platform—systems that move shipments, balances, and transactions through a world of external providers.</p><p>I like architecture when it makes change cheaper. I use AI-assisted workflows too, but keep ownership of the code and the decisions that ship.</p></div>
