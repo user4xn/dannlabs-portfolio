@@ -1,1 +1,1 @@
-:root{--paper:#f4f0e8;--ink:#171714;--muted:#787269;--line:#d7d0c3;--accent:#b84d2f;--dark:#17191b;--sans:'DM Sans',system-ui,sans-serif;--serif:'DM Serif Display',Georgia,serif;--mono:'JetBrains Mono',monospace;--shell:min(1160px,calc(100% - 48px))}
+:root{--paper:#f4f0e8;--ink:#171714;--muted:#787269;--line:#d7d0c3;--accent:#b84d2f;--dark:#17191b;--sans:'DM Sans',system-ui,sans-serif;--serif:'DM Serif Display',Georgia,serif;--mono:'JetBrains Mono',monospace;--shell:min(1080px,calc(100% - clamp(48px,12vw,200px)))}
