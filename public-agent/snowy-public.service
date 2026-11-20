@@ -8,6 +8,9 @@ Group=user4xn
 WorkingDirectory=/home/user4xn/work/dannlabs-portfolio/public-agent
 Environment=SNOWY_PUBLIC_DB=/home/user4xn/snowy-public-data/snowy-public.sqlite3
 Environment=SNOWY_PUBLIC_PORT=8787
+Environment=SNOWY_PUBLIC_PROVIDER_URL=https://griphubrouter.web.id/v1
+Environment=SNOWY_PUBLIC_MODEL=deepseek-v4.1-flash
+EnvironmentFile=-/home/user4xn/snowy-public-data/provider.env
 ExecStart=/usr/bin/python3 server.py
 Restart=on-failure
 RestartSec=3

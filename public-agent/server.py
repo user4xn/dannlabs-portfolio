@@ -115,9 +115,20 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, *_): return
     def send_json(self, code, data):
         raw = json.dumps(data, ensure_ascii=False).encode(); self.send_response(code); self.send_header("Content-Type", "application/json; charset=utf-8"); self.send_header("Content-Length", str(len(raw))); self.send_header("Cache-Control", "no-store"); self.end_headers(); self.wfile.write(raw)
+    def begin_sse(self):
+        self.send_response(200); self.send_header("Content-Type", "text/event-stream; charset=utf-8"); self.send_header("Cache-Control", "no-store"); self.send_header("Connection", "keep-alive"); self.send_header("X-Accel-Buffering", "no"); self.end_headers()
+    def emit_sse(self, kind, data):
+        raw = f"event: {kind}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n".encode()
+        self.wfile.write(raw); self.wfile.flush()
     def send_sse(self, events):
-        raw = ''.join(f"event: {kind}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n" for kind, data in events).encode()
-        self.send_response(200); self.send_header("Content-Type", "text/event-stream; charset=utf-8"); self.send_header("Cache-Control", "no-store"); self.send_header("Connection", "close"); self.send_header("Content-Length", str(len(raw))); self.end_headers(); self.wfile.write(raw)
+        self.begin_sse()
+        for kind, data in events: self.emit_sse(kind, data)
+        self.close_connection = True
+
+    def log_public_error(self, session, ih, started, exc):
+        event(session, "request.failed", type(exc).__name__, ih, int((time.time()-started)*1000))
+        self.emit_sse("error", {"message":"Snowy is temporarily unavailable. Please browse the public work instead."})
+        self.close_connection = True
     def do_GET(self):
         path = urlparse(self.path).path
         if path == "/api/health": return self.send_json(200, {"ok": True, "service": "snowy-public", "stateless": True})
@@ -139,20 +150,26 @@ class Handler(BaseHTTPRequestHandler):
         except Exception: return self.send_json(400, {"error": "invalid_json"})
         if not question or len(question)>MAX_INPUT: return self.send_json(400, {"error": "invalid_question"})
         rates[ip].append(now); session=str(body.get("session") or secrets.token_hex(12)); ih=hashlib.sha256(question.encode()).hexdigest(); started=time.time(); event(session,"request.started",input_hash=ih)
+        self.begin_sse()
+        self.emit_sse("activity", {"label":"Understanding the question"})
         if blocked(question):
             event(session,"request.blocked","policy",ih,blocked=1)
-            return self.send_sse([("activity", {"label":"Request blocked by public safety policy"}), ("blocked", {"message":"Snowy can explain the public portfolio, but cannot expose private instructions or systems."})])
+            self.emit_sse("activity", {"label":"Request blocked by public safety policy"})
+            self.emit_sse("blocked", {"message":"Snowy can explain the public portfolio, but cannot expose private instructions or systems."})
+            self.close_connection = True; return
+        self.emit_sse("activity", {"label":"Looking through public project notes"})
         key=ih+"|"+MODEL; hit=cache.get(key)
         if hit and now-hit[0] < 86400:
             answer=hit[1]; event(session,"cache.hit",input_hash=ih)
-            return self.send_sse([("activity", {"label":"Using public project notes"}), ("completed", answer)])
+            self.emit_sse("activity", {"label":"Using public project notes"}); self.emit_sse("completed", answer)
+            self.close_connection = True; return
         event(session,"context.selected","public knowledge base",ih)
+        self.emit_sse("source", {"label":"Public portfolio knowledge base"})
         try: answer_text=provider_answer(question,context())
         except (Exception, urllib.error.URLError) as exc:
-            event(session,"request.failed",type(exc).__name__,ih,int((time.time()-started)*1000))
-            return self.send_sse([("activity", {"label":"Preparing a safe fallback"}), ("error", {"message":"Snowy is temporarily unavailable. Please browse the public work instead."})])
+            self.log_public_error(session, ih, started, exc); return
         result={"answer":answer_text,"session":session,"sources":["public portfolio knowledge base"]}; cache[key]=(now,result); event(session,"request.completed","answer",ih,int((time.time()-started)*1000))
-        return self.send_sse([("activity", {"label":"Understanding the question"}), ("activity", {"label":"Looking through public project notes"}), ("source", {"label":"Public portfolio knowledge base"}), ("answer", {"text":answer_text}), ("completed", result)])
+        self.emit_sse("answer", {"text":answer_text}); self.emit_sse("completed", result); self.close_connection = True
 
 if __name__ == "__main__":
     db().close(); print(f"Snowy public listening on http://{HOST}:{PORT}", flush=True); ThreadingHTTPServer((HOST,PORT), Handler).serve_forever()
